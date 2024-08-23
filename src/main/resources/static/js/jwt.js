@@ -1,23 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => 
-{
-	$(document).ready(()=>
-	{
-		$('body').on('click', '#boton', event =>
-		{
+document.addEventListener("DOMContentLoaded", () => {
+	$(document).ready(()=> {
+		$('body').on('click', '#boton', event => {
 			event.preventDefault();
 			$("#prueba").html('<p style="color: red;text-align: left; font-family: "Lato", sans-serif; font-size: 40px;">FUNCIONA</p>');
   		});
 
-		$("#loginForm").submit( event => 
-		{
+		$("#loginForm").submit( event => {
 			event.preventDefault();
 			document.getElementById('login').disabled = true;
 
 			let username = $("#username").val();
 			let password = $("#password").val();
 
-			$.ajax(
-			{
+			$.ajax( {
 				url: 'http://localhost:8080/api/demo12/auth/authenticate',
 				type: 'POST',
 				data: JSON.stringify({username,password}),
@@ -44,14 +39,13 @@ document.addEventListener("DOMContentLoaded", () =>
 					//window.location.href = 'http://localhost:8080/api/demo12/index';
 					//window.location.href = 'http://localhost:8080/api/demo12/index?token='+localStorage.getItem('token');				
 				},
-				error: error =>{
+				error: error => {
 					console.log(`Error: ${error}`)
 				},				
 			});			
 		});
 
-		$.ajax(
-			{
+		$.ajax( {
 			url: 'http://localhost:8080/api/demo12/index',
 			method: 'GET',
 			headers: {
