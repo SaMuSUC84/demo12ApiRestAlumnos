@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html
+    lang="es"
+    xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+		http-equiv="X-UA-Compatible"
+		content="IE=edge">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >  
+	<script th:src="@{/js/jquery-3.7.1.min.js}"></script> 
+    <script th:src="@{/js/jwt.js}"></script>  
+     <link
+        rel="stylesheet"
+		type="text/css"
+		tth:href="@{/css/style.css}"
+    >  
+    <title>Demo 12</title>    
+</head>
+
+<body>
+	<header>
+	<div id="cabecera">
+		<h1> BIENVENIDO</h1>
+		<h3>Demo 12 APIREST con Auth tipo JWT Token y consumo en Frontend</h3>
+		<p>
+			APIREST creada para consumo desde el frontend, haciendo uso de la autenticación</br>
+			por medio de tokens de tipo JSON llamados JWT (Json Web Tokens).</br>
+			</br>
+			</br>
+			Demo 12 técnica -- Desarrollo en Aplicaciones Web.		
+		</p>
+	</div>		
+	</header>
+
+	<main>
+		<div class="botones">
+			<a th:href="@{/getall}" class="boton">Controladora getAll</a>
+		</br>
+			<a th:href="@{/postone}" class="boton">Controladora postOnce</a>
+		</div>	
+	</main>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
