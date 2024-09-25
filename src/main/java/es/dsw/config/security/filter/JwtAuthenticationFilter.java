@@ -24,7 +24,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter
 {	
 	/*
 	 * Creamos nuestro filtro personalizado de JWT para pasarlo en la 
-	 * configuraciuon de HttpSecurity en la propiedad .addFilterBefore().
+	 * configuración de HttpSecurity en la propiedad .addFilterBefore().
 	 * Heredamos de OncePerRequestFilter a que nos aseguramos de que nuestro filtro 
 	 * se invoque solo una vez por solicitud.
 	 * Tenemos qe sobrescribir su método doFilterInternal().

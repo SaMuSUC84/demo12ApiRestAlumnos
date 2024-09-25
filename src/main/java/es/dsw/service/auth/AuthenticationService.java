@@ -62,14 +62,14 @@ public class AuthenticationService
 				authRequest.getUsername(), authRequest.getPassword()
 		);
 		SecurityContextHolder.getContext().setAuthentication(auth);
+		
 		authenticationManager.authenticate(auth);
 		
 		UserDetails user = objUsuarioService.findByUsername(authRequest.getUsername());
 		
 		String jwt = jwtService.generarToken(user, generateExtraClaims(user));
 		
-		AuthenticationResponse authResp = new AuthenticationResponse();
-		authResp.setJwt(jwt);
+		AuthenticationResponse authResp = new AuthenticationResponse(jwt);
 		
 		return authResp;
 	}

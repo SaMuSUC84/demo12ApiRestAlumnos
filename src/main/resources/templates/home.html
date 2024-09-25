@@ -3,7 +3,6 @@
     lang="es"
     xmlns:th="http://www.thymeleaf.org"
 >
-
 <head>
     <meta charset="UTF-8">
     <meta
@@ -12,14 +11,18 @@
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1"
-    >  
-	<script th:src="@{/js/jquery-3.7.1.min.js}"></script> 
-    <script th:src="@{/js/jwt.js}"></script>  
-     <link
+    >
+    <link
         rel="stylesheet"
 		type="text/css"
-		tth:href="@{/css/style.css}"
+		th:href="@{/css/style.css}"
     >  
+	<script 
+		th:src="@{/js/jquery-3.7.1.min.js}">
+	</script> 
+	<script 
+		th:src="@{/js/jwt.js}">
+	</script>  
     <title>Demo 12</title>    
 </head>
 
@@ -35,18 +38,26 @@
 			</br>
 			Demo 12 técnica -- Desarrollo en Aplicaciones Web.		
 		</p>
+		<form
+		th:action="@{/logout}"
+		method="POST"
+		id="logoutForm"
+	>
+		<a
+			onclick="document.getElementById('logoutForm').submit();"
+		>Salir</a>
+	</form>
 	</div>		
 	</header>
 
-	<main>
+	<main sec:authorize="isAuthenticated()">
 		<div class="botones">
-			<a th:href="@{/getall}" class="boton">Controladora getAll</a>
+			<a th:href="@{/getall}" class="boton" >Controladora getAll</a>
 		</br>
 			<a th:href="@{/postone}" class="boton">Controladora postOnce</a>
 		</div>	
 	</main>
 </body>
-
 </html>
 
 

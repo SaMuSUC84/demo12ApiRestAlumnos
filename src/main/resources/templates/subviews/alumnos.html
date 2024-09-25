@@ -10,26 +10,26 @@
 	</head>
 	<body>
 		<table>	
-		  <caption>ALUMNOS</caption>	
-		  <thead>        
-		    <tr>	  
-		      	<th >NOMBRE</th>
-		      	<th >APELLIDOS</th>
-		     	<th >EDAD</th>
-		     	<th >DNI</th>
-		      	<th >PROMOCIONA</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr th:each="alumno : ${alumnos}">
-		      	<td th:text="${alumno.nombre}"></td>
-		     	<td th:text="${alumno.apellidos}"></td>
-		     	<td th:text="${alumno.edad}"></td>
-		     	<td th:text="${alumno.dni}"></td>
-		     	<td th:text="${alumno.isPromociona}"></td>		      
-		    </tr>
-		  </tbody>
+		  	<caption>ALUMNOS</caption>	
+		  	<thead>        
+		    	<tr>	  
+					<th >NOMBRE</th>
+					<th >APELLIDOS</th>
+					<th >EDAD</th>
+					<th >DNI</th>
+					<th >PROMOCIONA</th>
+				</tr>
+			</thead>
+		  	<tbody>
+				<tr th:each="alumno : ${alumnos}">
+					<td th:text="${alumno.nombre}"></td>
+					<td th:text="${alumno.apellidos}"></td>
+					<td th:text="${alumno.edad}"></td>
+					<td th:text="${alumno.dni}"></td>
+					<td th:text="${alumno.isPromociona}"></td>		      
+					</tr>
+			</tbody>
 		</table>
-		<a th:href="@{/index}" class="boton">HOME</a>
+		<a th:href="@{/home}" class="boton">HOME</a>
 	</body>
 </html>
